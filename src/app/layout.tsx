@@ -8,7 +8,19 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'shappoff',
+  title: "Фонды и описи НИАБ",
+  description: "Удобный поиск описей по фондам НИАБ (Национальный исторический архив Беларуси).",
+  icons: [
+    {
+      url: '/niab/favicon.ico',
+      type: 'image/x-icon',
+      sizes: 'any',
+      rel: 'icon'
+    }
+  ],
+  keywords: ['НИАБ', 'Фонды', 'Описи', 'генеалогия', 'Беларусь'],
+  referrer: 'origin',
+  robots: {index: true, follow: true},
   verification: {
     google: "WcZLxrvNHupEwOXBZ_xza8RMaDFrJ_7Nc_Ax_vyo0zw",
     yandex: "cd605c554612fb41"
