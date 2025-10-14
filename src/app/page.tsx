@@ -1,6 +1,6 @@
 import {Metadata} from "next";
 import FondyNIABApp from "@/components/featured/niab/FondyNIABApp";
-import './niab/NIAB.css';
+import './NIAB.css';
 
 export const metadata: Metadata = {
     title: "Фонды и описи НИАБ",
