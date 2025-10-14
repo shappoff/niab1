@@ -51,7 +51,7 @@ export default function BasicTabs({digitedPosts}: any) {
                         .map((opNmb: string, index: number) => {
                             return <TabPanel key={index}
                                              sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', padding: 0}}
-                                             value={index}>
+                                             value={index.toString()}>
                                 {
                                     opisi[opNmb] ? Object.values(opisi[opNmb])
                                         .sort(compareDelaNumbers)
