@@ -69,7 +69,7 @@ const MainTabsOpisi = ({fond, opNmbPool, digited, opisi, rejected, indexed}: any
                                                      justifyContent: 'flex-start',
                                                      padding: 0
                                                  }}
-                                                 value={+opNmb}>
+                                                 value={opNmb.toString()}>
                                     {
                                         indexed[value] ? <>
                                             <Divider sx={{width: '100%', margin: '10px 0'}} textAlign="center">
