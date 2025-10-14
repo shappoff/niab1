@@ -1,6 +1,9 @@
+import * as React from "react";
 import type {Metadata, Viewport} from "next";
 import GAAnalytics from "@/components/shared/GAAnalytics";
 import "./globals.css";
+import AlertInfo from "@/components/featured/niab/AlertInfo";
+import ReactQueryTanstack from "@/components/featured/niab/ReactQueryTanstack";
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -30,7 +33,8 @@ export default function RootLayout({
       !!process.env.DEBUG ? <></> : <GAAnalytics />
     }
       <body>
-        {children}
+      <AlertInfo severity="info" anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>Количество записей в базе: Минск 816389 Гродно 201590</AlertInfo>
+      <ReactQueryTanstack>{children}</ReactQueryTanstack>
       </body>
     </html>
   );
