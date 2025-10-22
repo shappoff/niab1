@@ -23,12 +23,16 @@ import {
     rejectedFormattedPath,
     statistics333projectPath
 } from "@/components/paths";
+
+// TODO: imagin how to resolve 500 page error
+const allPostsTruncate = (allPosts: Array<any>) => allPosts.filter(({fod}: any) => fod !== 500);
+
 import GAnalitycs from "@/components/featured/niab/GAnalitycs";
 
 export async function generateStaticParams() {
     const stPropsArr: Array<any> = [];
     const allPosts = JSON.parse(fs.readFileSync(mainFODDataPath, 'utf8'));
-    allPosts.forEach(({fod}: any) => {
+    allPostsTruncate(allPosts).forEach(({fod}: any) => {
         stPropsArr.push({fond: `${fod}`});
     })
 
@@ -39,7 +43,7 @@ export async function generateMetadata({ params }: any) {
     const {fond} = await params;
     const allPosts = JSON.parse(fs.readFileSync(mainFODDataPath, 'utf8'));
 
-    const currentItem = allPosts.find((item: any) => +item.fod === +fond || item.fod === fond) || {};
+    const currentItem = allPostsTruncate(allPosts).find((item: any) => +item.fod === +fond || item.fod === fond) || {};
 
     return {
         title: `${currentItem.fod} | ${currentItem.title}`,
@@ -62,7 +66,7 @@ const FondPage = async ({params}: any) => {
     const digitedFormattedData = JSON.parse(fs.readFileSync(digitedFormattedDataPath, 'utf8'));
     const indexedNIABData = JSON.parse(fs.readFileSync(indexedNIABDataPath, 'utf8'));
     const d333Posts = JSON.parse(fs.readFileSync(statistics333projectPath, 'utf8'));
-    const currentItem = allPosts.find((item: any) => +item.fod === +fond || item.fod === fond) || {};
+    const currentItem = allPostsTruncate(allPosts).find((item: any) => +item.fod === +fond || item.fod === fond) || {};
     const opNmbPool: any = {};
     currentItem.opisi.forEach(({opNmb}: any) => {
         if (opNmb) {
