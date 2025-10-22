@@ -129,7 +129,7 @@ const FondCard = ({item, index}: any) => {
             <CardBody item={item}/>
         </section>
         <section className="card-footer-section">
-            <Link href={`/niab/${item.fod}`}>
+            <Link href={`/${item.fod}`}>
                 <Button size="small"
                         variant="outlined"
                         className="fond-opis-button-src"

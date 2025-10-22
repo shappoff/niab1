@@ -41,7 +41,7 @@ const FondyNIABApp = () => {
             if (!isID && fond.length) {
                 const url = new URL(location.href);
                 url.searchParams.delete('q');
-                url.pathname = `/niab/${fond}`;
+                url.pathname = `/${fond}`;
                 location.href = url.href;
                 return;
             }
