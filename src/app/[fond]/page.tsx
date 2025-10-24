@@ -83,7 +83,7 @@ const FondPage = async ({params}: any) => {
                 <Link href="/">
                     <HomeIcon />
                 </Link>
-                <Link href="/niab">
+                <Link href="/niab1">
                     Фонды НИАБ
                 </Link>
                 <Link target="_blank" href={currentItem.fodlink} style={{position: 'relative'}}>
